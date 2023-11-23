@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#menu {
+    margin-bottom: 20px;
+}
+
+#commande {
+    margin-bottom: 20px;
+}
+
+#total {
+    font-weight: bold;
+}

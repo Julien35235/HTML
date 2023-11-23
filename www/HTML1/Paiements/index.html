@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Formulaire de Paiement</title>
+</head>
+<body>
+    
+    <form action="/traiter-paiement" method="post">
+        <!-- Informations du client -->
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <!-- Informations de la carte de crédit -->
+        <label for="numero-carte">Numéro de Carte de Crédit:</label>
+        <input type="text" id="numero-carte" name="numero-carte" required><br>
+
+        <label for="date-expiration">Date d'Expiration:</label>
+        <input type="text" id="date-expiration" name="date-expiration" placeholder="MM/AA" required><br>
+
+        <label for="code-securite">Code de Sécurité:</label>
+        <input type="text" id="code-securite" name="code-securite" required><br>
+
+        <!-- Montant à payer -->
+        <label for="montant">Montant à Payer:</label>
+        <input type="text" id="montant" name="montant" required><br>
+
+        <!-- Bouton de soumission -->
+        <button type="submit">Payer</button>
+    </form>
+</body>
+</html>

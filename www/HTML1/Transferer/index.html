@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="php/upload.php">
+    <title>Transfert de fichiers</title>
+</head>
+<body>
+    <h1>Transfert de fichiers</h1>
+    
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="jpgFile">Transférer un fichier JPG :</label>
+        <input type="file" name="jpgFile" id="jpgFile" accept=".jpg">
+        <br>
+
+        <label for="txtFile">Transférer un fichier TXT :</label>
+        <input type="file" name="txtFile" id="txtFile" accept=".txt">
+        <br>
+
+        <label for="pngFile">Transférer un fichier PNG :</label>
+        <input type="file" name="pngFile" id="pngFile" accept=".png">
+        <br>
+
+        <label for="docxFile">Transférer un fichier DOCX :</label>
+        <input type="file" name="docxFile" id="docxFile" accept=".docx">
+        <br>
+
+        <label for="xlsxFile">Transférer un fichier XLSX :</label>
+        <input type="file" name="xlsxFile" id="xlsxFile" accept=".xlsx">
+        <br>
+
+        <label for="pptxFile">Transférer un fichier PPTX :</label>
+        <input type="file" name="pptxFile" id="pptxFile" accept=".pptx">
+        <br>
+
+        <label for="pdfFile">Transférer un fichier PDF :</label>
+        <input type="file" name="pdfFile" id="pdfFile" accept=".pdf">
+        <br>
+
+        <label for="odtFile">Transférer un fichier ODT :</label>
+        <input type="file" name="odtFile" id="odtFile" accept=".odt">
+        <br>
+
+        <!-- Ajoutez d'autres types de fichiers selon vos besoins -->
+<br>
+        <input type="submit" value="Envoyer">
+    </form>
+</body>
+</html>

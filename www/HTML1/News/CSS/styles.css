@@ -1,0 +1,72 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    background-color: blue;
+    background-image: url("../img/journal.jpg");
+}
+#conteneur{
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: white;
+    padding: 10px;
+}
+h1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.imgindex{
+    width: 100%;
+    margin-top: 10px;
+}
+nav{
+    width: 100%;
+    height: auto;
+ }
+nav ul{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+    display: flex;
+}
+nav ul li{
+    margin: auto;
+    height: 50px;
+    line-height: 50px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    margin-top: 10px;
+}
+li{
+    list-style: none;
+}
+section{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+footer{
+    padding: 20px;
+    display: flex;
+}
+footer div{
+    margin-left: auto;
+    margin-right: auto;
+}
+h3{
+    margin-top: 20px;
+}
+h2{
+    margin-bottom: 20px;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme d'Achats</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+<h2>PROGRAMME D'ACHATS</h2>
+<ul>
+    <li><button onclick="afficherMagasins()">Afficher les magasins</button></li>
+    <li><button onclick="selectionnerMagasin()">Sélectionner un magasin</button></li>
+    <li><button onclick="afficherProduits()">Afficher les produits disponibles</button></li>
+    <li><button onclick="ajouterAuPanier()">Ajouter un produit au panier</button></li>
+    <li><button onclick="afficherPanier()">Afficher le panier</button></li>
+    <li><button onclick="passerALaCaisse()">Passer à la caisse</button></li>
+    <li><button onclick="quitter()">Quitter</button></li>
+</ul>
+
+<div id="output"></div>
+
+<script>
+    var magasins = [
+        "Carrefour Contact", "Carrefour", "Carrefour Express", "Carrefour City", "Leclerc ", "Cora", "Intermarché", 
+        "Super U","Boulanger","But","Conforama","Castorama", "Bricorama", "Maisons du Monde", "Gifi", "DARTY", "NOZ", 
+        "Intersport",  "Decathlon", "Starbucks", "RENAULT", "Peugeot", "Citroën", "Opel", "Volkswagen", "Audi",
+        "Mercedes", "BMW", "Fiat", "Toyota", "MONOPRIX", "Librairie Le Failler", "Free", "Orange", "SFR", "Prixtel", 
+        "Bouygues Telecom",  "Magasin Vert", "Point Vert", "GAMM VERT", "Jardiland", "Mr Bricolage", "POINT P", "Leroy Merlin", 
+        "Brico Dépôt", "Amazon", "Amazon Prime", "Netflix", "Leclerc Drive", "Carrefour Drive", "Auchan Drive",
+        "FNAC", "Cultura", "Intermarch Drive", "Super U Drive", "Système U", "Lidl", "Action"
+    ];
+
+    var produitsParMagasin = {
+        "Magasin Vert": ["Plante verte - 10.0€", "Engrais organique - 5.0€", "Terreau universel - 8.0€"],
+        "Point Vert": ["Graines de fleurs - 2.0€", "Outils de jardinage - 15.0€", "Terre végétale - 10.0€"],
+        "GAMM VERT": ["Tondeuse à gazon - 200.0€", "Abri de jardin - 500.0€", "Piscine hors-sol - 1000.0€"],
+        "Jardiland": ["Arbustes - 15.0€", "Décorations de jardin - 8.0€", "Accessoires pour animaux de compagnie - 10.0€"],
+        "Mr Bricolage": ["Peinture - 20.0€", "Outillage - 30.0€", "Quincaillerie - 10.0€"],
+        "POINT.P": ["Matériaux de construction - 50.0€", "Carrelage - 15.0€", "Isolation - 20.0€"],
+        "Leroy Merlin": ["Meubles de jardin - 100.0€", "Éclairage - 30.0€", "Revêtements de sol - 40.0€"],
+        "Amazon": ["Smartphone - 500.0€", "Ordinateur portable - 1000.0€", "Livre - 20.0€"],
+        "Amazon Prime": ["Abonnement mensuel - 9.99€", "Abonnement annuel - 99.0€"],
+        "Netflix": ["Abonnement mensuel - 12.99€", "Abonnement annuel - 129.99€"],
+        "Leclerc Drive": ["Fruits et légumes - 44.88 €", "Produits laitiers - 45.80", "Viandes et poissons - 35.36"],
+        "Carrefour Drive": ["Produits d'épicerie - 55.75", "Produits d'hygiène - 45.96", "Produits pour bébé - 25.78"],
+        "Auchan Drive": ["Produits surgelés - 35.95", "Boissons - 15.76", "Produits ménagers - 45.85"],
+        "Brico Dépôt": ["Matériel de construction - 235.096", "Revêtements - 123.458", "Rangement - 96.87"],
+        "FNAC": ["Livres - 12.75", "High-tech - 23.98", "Musique - 11.09"],
+        "Cultura": ["Loisirs créatifs - 10.34", "Jeux de société - 5.86", "Instruments de musique - 7.76"],
+        "Intermarché Drive": ["Produits d'épicerie - 12.87", "Produits frais - 17.88", "Produits d'hygiène - 55.33"],
+        "Super U Drive": ["Produits bio - 35.44", "Produits locaux - 33.45", "Produits pour animaux - 11.76"],
+        "Système U": ["Produits alimentaires - 45.44", "Produits d'entretien - 56.88", "Produits de beauté - 54.44"],
+        "Hyper U": ["Électroménager - 22.55", "Vêtements - 29.88", "Jouets - 21.98"],
+        "Lidl": ["Produits discount - Prix variables", "Produits frais - Prix variables", "Produits de boulangerie - Prix variables"],
+        "Action": ["Articles ménagers - Prix variables", "Décoration - Prix variables", "Jouets - Prix variables"]
+    };
+
+    var panier = [];
+    var magasinSelectionne = "";
+
+    function afficherMagasins() {
+        var output = "<h2>LISTE DES MAGASINS</h2><ul>";
+        for (var i = 0; i < magasins.length; i++) {
+            output += "<li>" + (i + 1) + ". " + magasins[i] + "</li>";
+        }
+        output += "</ul>";
+        document.getElementById('output').innerHTML = output;
+    }
+
+    function selectionnerMagasin() {
+        magasinSelectionne = prompt("Sélectionnez un magasin : ");
+        if (magasins.indexOf(magasinSelectionne) !== -1) {
+            alert("Magasin sélectionné : " + magasinSelectionne);
+        } else {
+            alert("Magasin non reconnu.");
+        }
+    }
+
+    function afficherProduits() {
+        if (magasinSelectionne) {
+            var produits = produitsParMagasin[magasinSelectionne];
+            var output = "<h2>PRODUITS DISPONIBLES DANS " + magasinSelectionne + "</h2><ul>";
+            for (var i = 0; i < produits.length; i++) {
+                output += "<li>" + produits[i] + "</li>";
+            }
+            output += "</ul>";
+            document.getElementById('output').innerHTML = output;
+        } else {
+            alert("Veuillez sélectionner un magasin d'abord.");
+        }
+    }
+
+    function ajouterAuPanier() {
+        var produit = prompt("Entrez le nom du produit : ");
+        var prix = parseFloat(prompt("Entrez le prix du produit : "));
+        if (!isNaN(prix)) {
+            panier.push({"produit": produit, "prix": prix});
+            alert("Produit ajouté au panier : " + produit);
+        } else {
+            alert("Veuillez entrer un prix valide.");
+        }
+    }
+
+    function afficherPanier() {
+        var output = "<h2>VOTRE PANIER</h2><ul>";
+        if (panier.length === 0) {
+            output += "<li>Le panier est vide.</li>";
+        } else {
+            for (var i = 0; i < panier.length; i++) {
+                output += "<li>" + panier[i]['produit'] + " - " + panier[i]['prix'] + "€</li>";
+            }
+        }
+        output += "</ul>";
+        document.getElementById('output').innerHTML = output;
+    }
+
+    function passerALaCaisse() {
+        var total = calculerTotal();
+        alert("Total à payer : " + total + "€");
+        // Demander les détails de paiement (dans une application réelle, cela devrait être géré de manière sécurisée)
+        var cardNumber = prompt("Numéro de carte : ");
+        var expirationDate = prompt("Date d'expiration (MM/AA) : ");
+        var cvv = prompt("Code de sécurité (CVV) : ");
+        alert("Traitement du paiement de " + total + "€...");
+        viderPanier();
+    }
+
+    function calculerTotal() {
+        var total = 0.0;
+        for (var i = 0; i < panier.length; i++) {
+            total += panier[i]["prix"];
+        }
+        return total;
+    }
+
+    function viderPanier() {
+        panier = [];
+        alert("Le panier a été vidé.");
+    }
+
+    function quitter() {
+        alert("Merci d'avoir utilisé notre programme. Au revoir !");
+    }
+</script>
+
+</body>
+</html>

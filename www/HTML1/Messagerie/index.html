@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Messagerie</title>
+</head>
+<body>
+
+<script>
+    function appeler() {
+        var numero = prompt("Entrez le numéro à appeler : ");
+        alert("=== Appeler " + numero + " ===");
+        // Vous pouvez envoyer le numéro au serveur ici pour effectuer des actions Python
+    }
+
+    function envoyerMessage() {
+        var destinataire = prompt("Entrez le destinataire : ");
+        var message = prompt("Entrez le contenu du message : ");
+        alert("=== Envoyer un message à " + destinataire + " ===");
+        // Vous pouvez envoyer le destinataire et le message au serveur ici pour effectuer des actions Python
+    }
+
+    function lireMessages() {
+        alert("=== Boîte de réception ===");
+        // Vous pouvez envoyer une demande au serveur pour lire les messages ici
+    }
+
+    function ecouterMessagerie() {
+        alert("=== Écouter la messagerie ===");
+        // Vous pouvez envoyer une demande au serveur pour écouter la messagerie ici
+    }
+</script>
+
+<h1>Messagerie</h1>
+<p>Choisissez une option :</p>
+<button onclick="appeler()">1. Appeler</button>
+<button onclick="envoyerMessage()">2. Envoyer un message</button>
+<button onclick="lireMessages()">3. Lire les messages</button>
+<button onclick="ecouterMessagerie()">4. Écouter la messagerie</button>
+<button onclick="alert('Au revoir!')">5. Quitter</button>
+
+</body>
+</html>

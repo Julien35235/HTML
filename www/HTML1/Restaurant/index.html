@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant de la Victoire</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <h1>Bienvenue au restaurant de la Victoire !</h1>
+
+    <div id="menu">
+        <h2>Menu principal :</h2>
+
+        <form id="menuForm">
+            <label for="plat">Veuillez entrer le numéro du plat que vous souhaitez commander (ou 'q' pour quitter) :</label>
+            <input type="text" id="plat" name="plat" required>
+            <button type="button" onclick="ajouterCommande()">Ajouter à la commande</button>
+        </form>
+
+        <div id="optionsMenu">
+            <!-- Les options du menu seront ajoutées ici dynamiquement -->
+        </div>
+    </div>
+
+    <div id="commande">
+        <h2>Votre commande actuelle :</h2>
+        <ul id="commandeListe"></ul>
+    </div>
+
+    <div id="total">
+        <p>Total à payer : <span id="totalMontant">0</span> €</p>
+    </div>
+
+    <div id="paiement">
+        <h2>Mode de paiement :</h2>
+        <form id="paiementForm">
+            <label for="cardNumber">Numéro de carte :</label>
+            <input type="text" id="cardNumber" name="cardNumber" required>
+
+            <label for="expirationDate">Date d'expiration (MM/AA) :</label>
+            <input type="text" id="expirationDate" name="expirationDate" required>
+
+            <label for="cvv">Code de sécurité (CVV) :</label>
+            <input type="text" id="cvv" name="cvv" required>
+
+            <button type="button" onclick="passerALaCaisse()">Passer à la caisse</button>
+        </form>
+    </div>
+
+    <form id="informationsCommande">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required>
+
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required>
+
+        <label for="heure">Heure de la commande :</label>
+        <input type="text" id="heure" name="heure" required>
+
+        <label for="date">Date de la commande :</label>
+        <input type="text" id="date" name="date" required>
+
+        <button type="button" onclick="validerCommande()">Valider la commande</button>
+    </form>
+
+    <script>
+        // Les données du menu
+        var entrees = ["Salade verte", "Soupe du jour", "Carpaccio de saumon", "Sushi californien", "Oeufs cocottes", "Soufflé au fromage", "Soupe aux 7 légumes"];
+        var plats = ["Filet mignon", "Poulet rôti", "Lasagnes", "Hamburger", "Lasagnes à la bolognaise", "Hachis Parmentier", "Quiche lorraine maison", "Poulet à la moutarde, à l'estragon et aux champignons", "Lasagnes aux courgettes et au chèvre", "Filet mignon rôti au cidre", "Moules au roquefort", "Pot-au-feu"];
+        var desserts = ["Tiramisu", "Crème brûlée", "Mousse au chocolat", "Gâteau au chocolat fondant", "Gâteau au yaourt", "Galette des rois à la frangipane", "Tarte aux pommes", "Brownies", "Crumble aux pommes", "Madeleines", "Biscuits sablés au beurre", "Flan pâtissier traditionnel"];
+        var boissons = ["Coca-Cola", "Ice Tea", "Vittel", "Evian", "Plancoët", "San Pellegrino", "Oasis", "Fanta", "Sprite", "Tourtel Twis", "Affligem", "Heineken", "Le Val de la Chèvre", "Le Val de la Rance"];
+
+        // Options du menu
+        var optionsMenu = document.getElementById("optionsMenu");
+
+        // Commande actuelle
+        var commande = [];
+        var total = 0;
+
+        // Remplir les options du menu
+        function remplirMenuOptions() {
+            var menuOptions = entrees.concat(plats, desserts, boissons);
+            optionsMenu.innerHTML = "";
+
+            menuOptions.forEach(function (option, index) {
+                var optionElement = document.createElement("div");
+                optionElement.innerHTML = (index + 1) + ". " + option;
+                optionsMenu.appendChild(optionElement);
+            });
+        }
+
+        remplirMenuOptions();
+
+        // Ajouter une commande
+        function ajouterCommande() {
+            var platInput = document.getElementById("plat").value;
+
+            if (platInput.toLowerCase() === 'q') {
+                return;
+            }
+
+            var platIndex = parseInt(platInput);
+            var menuOptions = entrees.concat(plats, desserts, boissons);
+
+            if (!isNaN(platIndex) && platIndex > 0 && platIndex <= menuOptions.length) {
+                var plat = menuOptions[platIndex - 1];
+                commande.push(plat);
+                afficherCommande();
+                calculerTotal();
+            } else {
+                alert("Numéro de plat invalide ! Veuillez réessayer.");
+            }
+
+            document.getElementById("plat").value = "";
+        }
+
+        // Afficher la commande
+        function afficherCommande() {
+            var commandeListe = document.getElementById("commandeListe");
+            commandeListe.innerHTML = "";
+
+            commande.forEach(function (item) {
+                var itemElement = document.createElement("li");
+                itemElement.textContent = item;
+                commandeListe.appendChild(itemElement);
+            });
+        }
+
+        // Calculer le total
+        function calculerTotal() {
+            total = 0;
+
+            commande.forEach(function (item) {
+                if (item.includes("(Entrée)")) {
+                    total += 5;
+                } else if (item.includes("(Plat)")) {
+                    total += 10;
+                } else if (item.includes("(Dessert)")) {
+                    total += 6;
+                } else if (item.includes("(Boisson)")) {
+                    total += 3;
+                }
+            });
+
+            document.getElementById("totalMontant").textContent = total;
+        }
+
+        // Passer à la caisse
+        function passerALaCaisse() {
+            var cardNumber = document.getElementById("cardNumber").value;
+            var expirationDate = document.getElementById("expirationDate").value;
+            var cvv = document.getElementById("cvv").value;
+
+            if (cardNumber && expirationDate && cvv) {
+                alert("Total à payer : " + total + "€\nNuméro de carte : " + cardNumber + "\nDate d'expiration : " + expirationDate + "\nCode de sécurité : " + cvv + "\nTraitement du paiement en cours...");
+                viderPanier();
+            } else {
+                alert("Veuillez remplir tous les champs du formulaire de paiement.");
+            }
+        }
+
+        // Vider le panier
+        function viderPanier() {
+            commande = [];
+            total = 0;
+            document.getElementById("totalMontant").textContent = total;
+            alert("Le panier a été vidé.");
+        }
+
+        // Valider la commande
+        function validerCommande() {
+            var nom = document.getElementById("nom").value;
+            var prenom = document.getElementById("prenom").value;
+            var heure = document.getElementById("heure").value;
+            var date = document.getElementById("date").value;
+
+            if (commande.length === 0) {
+                alert("La commande est vide. Veuillez ajouter des plats au menu.");
+                return;
+            }
+
+            alert("Informations de commande :\n\nNom : " + nom + "\nPrénom : " + prenom + "\nHeure de la commande : " + heure + "\nDate de la commande : " + date + "\n\nCommande :\n" + commande.join("\n") + "\n\nTotal à payer : " + total + " €\n\nMerci d'avoir commandé au restaurant de la Victoire ! Bon appétit !");
+        }
+    </script>
+</body>
+</html>
