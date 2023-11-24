@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_af7e62a4bd1dbdc6e0149fe673c72bce {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_af7e62a4bd1dbdc6e0149fe673c72bce" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_af7e62a4bd1dbdc6e0149fe673c72bce = L.map(
+                "map_af7e62a4bd1dbdc6e0149fe673c72bce",
+                {
+                    center: [48.8566, 2.3522],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c9b578ad63d4f2d85f24fd5351d034b5 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_af7e62a4bd1dbdc6e0149fe673c72bce);
+        
+    
+            var marker_d32f5a5f065b0df50a3440743497c942 = L.marker(
+                [48.8809, 2.3554],
+                {}
+            ).addTo(map_af7e62a4bd1dbdc6e0149fe673c72bce);
+        
+    
+            var icon_1b1741095f889ea9bc0f30edc04a6473 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_d32f5a5f065b0df50a3440743497c942.setIcon(icon_1b1741095f889ea9bc0f30edc04a6473);
+        
+    
+        var popup_7c8427dbd80d54af3a847769d984edac = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2cf23dfd93935d75bfcb75e0c0ed7559 = $(`<div id="html_2cf23dfd93935d75bfcb75e0c0ed7559" style="width: 100.0%; height: 100.0%;">Gare du Nord</div>`)[0];
+                popup_7c8427dbd80d54af3a847769d984edac.setContent(html_2cf23dfd93935d75bfcb75e0c0ed7559);
+            
+        
+
+        marker_d32f5a5f065b0df50a3440743497c942.bindPopup(popup_7c8427dbd80d54af3a847769d984edac)
+        ;
+
+        
+    
+    
+            var marker_d497e7bebe6082f59bdc2ac741101168 = L.marker(
+                [48.8619, 2.3475],
+                {}
+            ).addTo(map_af7e62a4bd1dbdc6e0149fe673c72bce);
+        
+    
+            var icon_94d7058145338bdc77509dde4015ca8c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_d497e7bebe6082f59bdc2ac741101168.setIcon(icon_94d7058145338bdc77509dde4015ca8c);
+        
+    
+        var popup_95bd7d64ec51fa7dadba2f0b15331373 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a9eb773bcf4ca8bd9b848abcf6e8d963 = $(`<div id="html_a9eb773bcf4ca8bd9b848abcf6e8d963" style="width: 100.0%; height: 100.0%;">Châtelet - Les Halles</div>`)[0];
+                popup_95bd7d64ec51fa7dadba2f0b15331373.setContent(html_a9eb773bcf4ca8bd9b848abcf6e8d963);
+            
+        
+
+        marker_d497e7bebe6082f59bdc2ac741101168.bindPopup(popup_95bd7d64ec51fa7dadba2f0b15331373)
+        ;
+
+        
+    
+    
+            var marker_2743712dc439f3aaff8acb2379fff93a = L.marker(
+                [48.8483, 2.3954],
+                {}
+            ).addTo(map_af7e62a4bd1dbdc6e0149fe673c72bce);
+        
+    
+            var icon_b950ffc8a9b008c19db2bd5122239e5f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "subway", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_2743712dc439f3aaff8acb2379fff93a.setIcon(icon_b950ffc8a9b008c19db2bd5122239e5f);
+        
+    
+        var popup_87a5903d37471765d38ffc26151489d9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9c51edcb27485e3888907aa66ceaed4e = $(`<div id="html_9c51edcb27485e3888907aa66ceaed4e" style="width: 100.0%; height: 100.0%;">Nation</div>`)[0];
+                popup_87a5903d37471765d38ffc26151489d9.setContent(html_9c51edcb27485e3888907aa66ceaed4e);
+            
+        
+
+        marker_2743712dc439f3aaff8acb2379fff93a.bindPopup(popup_87a5903d37471765d38ffc26151489d9)
+        ;
+
+        
+    
+    
+            var marker_130b96698cc0e4b62c8331afeba4abcf = L.marker(
+                [48.9345, 2.3544],
+                {}
+            ).addTo(map_af7e62a4bd1dbdc6e0149fe673c72bce);
+        
+    
+            var icon_63448bccfc4819727c1b0933ab0a1546 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_130b96698cc0e4b62c8331afeba4abcf.setIcon(icon_63448bccfc4819727c1b0933ab0a1546);
+        
+    
+        var popup_592b09ee753fc8d7b23cf0e41bdd52ae = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8a4f28a6e6a4ce87f4cfc38845b1e13e = $(`<div id="html_8a4f28a6e6a4ce87f4cfc38845b1e13e" style="width: 100.0%; height: 100.0%;">T1 - Saint-Denis</div>`)[0];
+                popup_592b09ee753fc8d7b23cf0e41bdd52ae.setContent(html_8a4f28a6e6a4ce87f4cfc38845b1e13e);
+            
+        
+
+        marker_130b96698cc0e4b62c8331afeba4abcf.bindPopup(popup_592b09ee753fc8d7b23cf0e41bdd52ae)
+        ;
+
+        
+    
+    
+            var marker_52c6ae0c1e1ec7e1922467cd7a9c7364 = L.marker(
+                [48.8896, 2.2386],
+                {}
+            ).addTo(map_af7e62a4bd1dbdc6e0149fe673c72bce);
+        
+    
+            var icon_1f88f6b0813c0fedb83de67f092031f7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_52c6ae0c1e1ec7e1922467cd7a9c7364.setIcon(icon_1f88f6b0813c0fedb83de67f092031f7);
+        
+    
+        var popup_54036dbdfb668291616b91e89a24ad89 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8081ddf05dc86adf7514afdea7eb0734 = $(`<div id="html_8081ddf05dc86adf7514afdea7eb0734" style="width: 100.0%; height: 100.0%;">T2 - La Défense</div>`)[0];
+                popup_54036dbdfb668291616b91e89a24ad89.setContent(html_8081ddf05dc86adf7514afdea7eb0734);
+            
+        
+
+        marker_52c6ae0c1e1ec7e1922467cd7a9c7364.bindPopup(popup_54036dbdfb668291616b91e89a24ad89)
+        ;
+
+        
+    
+    
+            var marker_a4bfb17fa2af6305d757b8f95334fbcb = L.marker(
+                [48.8313, 2.2886],
+                {}
+            ).addTo(map_af7e62a4bd1dbdc6e0149fe673c72bce);
+        
+    
+            var icon_9650bbf1456b41b1dfb1499e2ebe7032 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_a4bfb17fa2af6305d757b8f95334fbcb.setIcon(icon_9650bbf1456b41b1dfb1499e2ebe7032);
+        
+    
+        var popup_3efc9f61f1cded2e2d1b770c01ff2a33 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_acab36b88cea3662c2c776630e656965 = $(`<div id="html_acab36b88cea3662c2c776630e656965" style="width: 100.0%; height: 100.0%;">T3 - Porte de Versailles</div>`)[0];
+                popup_3efc9f61f1cded2e2d1b770c01ff2a33.setContent(html_acab36b88cea3662c2c776630e656965);
+            
+        
+
+        marker_a4bfb17fa2af6305d757b8f95334fbcb.bindPopup(popup_3efc9f61f1cded2e2d1b770c01ff2a33)
+        ;
+
+        
+    
+    
+            var marker_5b14422103e139755f5580a4ac81166e = L.marker(
+                [48.8708, 2.3321],
+                {}
+            ).addTo(map_af7e62a4bd1dbdc6e0149fe673c72bce);
+        
+    
+            var icon_ff5e3b6e721cd052a2660f7ef99df562 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_5b14422103e139755f5580a4ac81166e.setIcon(icon_ff5e3b6e721cd052a2660f7ef99df562);
+        
+    
+        var popup_0e94ed40534fcdaf67848a5608d0850c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_140c94410b753452ca97d742ca9cfedb = $(`<div id="html_140c94410b753452ca97d742ca9cfedb" style="width: 100.0%; height: 100.0%;">Opéra</div>`)[0];
+                popup_0e94ed40534fcdaf67848a5608d0850c.setContent(html_140c94410b753452ca97d742ca9cfedb);
+            
+        
+
+        marker_5b14422103e139755f5580a4ac81166e.bindPopup(popup_0e94ed40534fcdaf67848a5608d0850c)
+        ;
+
+        
+    
+    
+            var marker_1de8f57b186dfb4863a313f61c028482 = L.marker(
+                [48.875, 2.3267],
+                {}
+            ).addTo(map_af7e62a4bd1dbdc6e0149fe673c72bce);
+        
+    
+            var icon_13c457cfa4a3e3d62b956d9f8236a5d0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_1de8f57b186dfb4863a313f61c028482.setIcon(icon_13c457cfa4a3e3d62b956d9f8236a5d0);
+        
+    
+        var popup_136c6ec7aefc5bfeb51c482ad2747e97 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d838f03bd9e29ffe32be6db77c7326f2 = $(`<div id="html_d838f03bd9e29ffe32be6db77c7326f2" style="width: 100.0%; height: 100.0%;">Saint-Lazare</div>`)[0];
+                popup_136c6ec7aefc5bfeb51c482ad2747e97.setContent(html_d838f03bd9e29ffe32be6db77c7326f2);
+            
+        
+
+        marker_1de8f57b186dfb4863a313f61c028482.bindPopup(popup_136c6ec7aefc5bfeb51c482ad2747e97)
+        ;
+
+        
+    
+    
+            var marker_faaa45350e695c50b612b88ef9d33717 = L.marker(
+                [48.8675, 2.363],
+                {}
+            ).addTo(map_af7e62a4bd1dbdc6e0149fe673c72bce);
+        
+    
+            var icon_956fbf3b7d90297666c01510f961d670 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bus", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_faaa45350e695c50b612b88ef9d33717.setIcon(icon_956fbf3b7d90297666c01510f961d670);
+        
+    
+        var popup_2e981ca24f8f497531523bdf82d3b7c9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_28f0a34af6b06527d46c115e89364a03 = $(`<div id="html_28f0a34af6b06527d46c115e89364a03" style="width: 100.0%; height: 100.0%;">République</div>`)[0];
+                popup_2e981ca24f8f497531523bdf82d3b7c9.setContent(html_28f0a34af6b06527d46c115e89364a03);
+            
+        
+
+        marker_faaa45350e695c50b612b88ef9d33717.bindPopup(popup_2e981ca24f8f497531523bdf82d3b7c9)
+        ;
+
+        
+    
+    
+            var marker_ef2fa9cb039b59bd015904465bcb44ef = L.marker(
+                [48.8448, 2.3732],
+                {}
+            ).addTo(map_af7e62a4bd1dbdc6e0149fe673c72bce);
+        
+    
+            var icon_91209c8eed72195009c9bef01ac410ed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_ef2fa9cb039b59bd015904465bcb44ef.setIcon(icon_91209c8eed72195009c9bef01ac410ed);
+        
+    
+        var popup_7662f15d80761ed074e384f91d5afe42 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_99e0a83690a5454b70097dc5c8c8fbaa = $(`<div id="html_99e0a83690a5454b70097dc5c8c8fbaa" style="width: 100.0%; height: 100.0%;">Gare de Lyon</div>`)[0];
+                popup_7662f15d80761ed074e384f91d5afe42.setContent(html_99e0a83690a5454b70097dc5c8c8fbaa);
+            
+        
+
+        marker_ef2fa9cb039b59bd015904465bcb44ef.bindPopup(popup_7662f15d80761ed074e384f91d5afe42)
+        ;
+
+        
+    
+    
+            var marker_1f6bd5962398c592a7fe648e0f994eae = L.marker(
+                [48.8409, 2.3204],
+                {}
+            ).addTo(map_af7e62a4bd1dbdc6e0149fe673c72bce);
+        
+    
+            var icon_8b17070a3fbe1d3ee70a566b493a7814 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_1f6bd5962398c592a7fe648e0f994eae.setIcon(icon_8b17070a3fbe1d3ee70a566b493a7814);
+        
+    
+        var popup_4a785887653efb17edd3c60ab598acdf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_019e463afec7e12bf127dfa1f0741abc = $(`<div id="html_019e463afec7e12bf127dfa1f0741abc" style="width: 100.0%; height: 100.0%;">Gare Montparnasse</div>`)[0];
+                popup_4a785887653efb17edd3c60ab598acdf.setContent(html_019e463afec7e12bf127dfa1f0741abc);
+            
+        
+
+        marker_1f6bd5962398c592a7fe648e0f994eae.bindPopup(popup_4a785887653efb17edd3c60ab598acdf)
+        ;
+
+        
+    
+    
+            var marker_6a920af83540ca283dd81b67b095f7f9 = L.marker(
+                [48.8448, 2.3732],
+                {}
+            ).addTo(map_af7e62a4bd1dbdc6e0149fe673c72bce);
+        
+    
+            var icon_85be6dd505d74894525d5ea8955c0e35 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_6a920af83540ca283dd81b67b095f7f9.setIcon(icon_85be6dd505d74894525d5ea8955c0e35);
+        
+    
+        var popup_c2d062c0d53f189569ad79b5d74a0c0c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0e8c3e69d35a1590d5ef45c786931f40 = $(`<div id="html_0e8c3e69d35a1590d5ef45c786931f40" style="width: 100.0%; height: 100.0%;">Gare de Lyon</div>`)[0];
+                popup_c2d062c0d53f189569ad79b5d74a0c0c.setContent(html_0e8c3e69d35a1590d5ef45c786931f40);
+            
+        
+
+        marker_6a920af83540ca283dd81b67b095f7f9.bindPopup(popup_c2d062c0d53f189569ad79b5d74a0c0c)
+        ;
+
+        
+    
+    
+            var marker_9386164dcfe3b15ec714c21665df93e9 = L.marker(
+                [48.8409, 2.3204],
+                {}
+            ).addTo(map_af7e62a4bd1dbdc6e0149fe673c72bce);
+        
+    
+            var icon_c154110351e078878fbf271a710a94e2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_9386164dcfe3b15ec714c21665df93e9.setIcon(icon_c154110351e078878fbf271a710a94e2);
+        
+    
+        var popup_aad3982e08c8a6810ee0565b49b1914a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e3f33445b475eba69c4a95dcac6f71f4 = $(`<div id="html_e3f33445b475eba69c4a95dcac6f71f4" style="width: 100.0%; height: 100.0%;">Gare Montparnasse</div>`)[0];
+                popup_aad3982e08c8a6810ee0565b49b1914a.setContent(html_e3f33445b475eba69c4a95dcac6f71f4);
+            
+        
+
+        marker_9386164dcfe3b15ec714c21665df93e9.bindPopup(popup_aad3982e08c8a6810ee0565b49b1914a)
+        ;
+
+        
+    
+</script>
+</html>

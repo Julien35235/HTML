@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carte des Transports Parisiens</title>
+  <!-- Ajouter la feuille de style de Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 600px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- Ajouter la bibliothèque Leaflet.js -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+  // Initialiser la carte avec les coordonnées du centre de Paris
+  var map = L.map('map').setView([48.8566, 2.3522], 12);
+
+  // Ajouter une couche de tuiles OpenStreetMap à la carte
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Exemple de tracé de ligne (Métro 1) avec des arrêts
+  var metro1 = L.polyline([
+    [48.8662, 2.3321], // Charles de Gaulle - Étoile
+    [48.8642, 2.3318], // George V
+    [48.8622, 2.3314], // Franklin D. Roosevelt
+    [48.8609, 2.3308], // Champs-Élysées - Clemenceau
+    // ... Ajouter d'autres points de coordonnées pour compléter la ligne
+  ], { color: 'red' }).addTo(map);
+
+  // Exemple d'ajout de marqueurs pour les arrêts
+  L.marker([48.8662, 2.3321]).addTo(map).bindPopup('Charles de Gaulle - Étoile');
+  L.marker([48.8642, 2.3318]).addTo(map).bindPopup('George V');
+  L.marker([48.8622, 2.3314]).addTo(map).bindPopup('Franklin D. Roosevelt');
+  L.marker([48.8609, 2.3308]).addTo(map).bindPopup('Champs-Élysées - Clemenceau');
+  // ... Ajouter d'autres marqueurs pour les autres arrêts
+
+  // Ajouter d'autres lignes de transport en commun de la même manière avec les arrêts
+
+</script>
+
+</body>
+</html>
